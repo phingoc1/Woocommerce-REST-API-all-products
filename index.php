@@ -1,10 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+use Automattic\WooCommerce\Client;
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
-use Automattic\WooCommerce\Client;
 
 $woocommerce = new Client(
     $_ENV['DOMAIN'], 
@@ -14,7 +14,6 @@ $woocommerce = new Client(
         'version' => 'wc/v3',
     ]
 );
-
 
 $products = array();
 
